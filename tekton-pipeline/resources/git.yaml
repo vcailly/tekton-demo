@@ -8,4 +8,4 @@ spec:
     - name: revision
       value: master
     - name: url
-      value: https://github.com/IBM/deploy-app-using-tekton-on-kubernetes
+      value: https://github.com/vcailly/tekton-demo

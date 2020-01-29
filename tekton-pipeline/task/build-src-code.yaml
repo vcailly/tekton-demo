@@ -24,7 +24,7 @@ spec:
       command:
         - "ls"
       args:
-        - "$(inputs.resources.git-source.path)"
+        - "/workspace/git-source/${inputs.params.pathToContext}"
     - name: build-and-push
       image: gcr.io/kaniko-project/executor
       command:
