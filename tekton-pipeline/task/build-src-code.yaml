@@ -33,7 +33,7 @@ spec:
         - /kaniko/executor
       args:
         - --dockerfile=${inputs.params.pathToDockerFile}
-        - --destination=${inputs.params.imageUrl}:${inputs.params.imageTag}
+        - --destination=de.icr.io/vcailly/builtapp:1.0
         - --context=/workspace/git-source/src
       securityContext:
         runAsUser: 0
