@@ -10,6 +10,9 @@ spec:
       resourceRef:
         name: git
   params:
+    - name: pathToDockerfile
+      description: The path to the dockerfile to build
+      default: Dockerfile
     - name: pathToContext
       value: "src"
     - name: pathToYamlFile

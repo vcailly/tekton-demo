@@ -30,7 +30,7 @@ spec:
       command:
         - /kaniko/executor
       args:
-        - --dockerfile=Dockerfile
+        - --dockerfile=${inputs.params.pathToDockerFile}
         - --destination=de.icr.io/vcailly/builtapp:1.0
         - --context=/workspace/git-source/src
       securityContext:

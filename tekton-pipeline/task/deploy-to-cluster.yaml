@@ -27,7 +27,7 @@ spec:
       args:
         - "-i"
         - "-e"
-        - "s;IMAGE;$(inputs.params.imageUrl):$(inputs.params.imageTag);g"
+        - "s;IMAGE;de.icr.io/vcailly/builtapp:1.0;g"
         - "/workspace/git-source/src/deploy.yaml"
     - name: deploy-app
       image: lachlanevenson/k8s-kubectl
@@ -35,5 +35,5 @@ spec:
       args:
         - "apply"
         - "-f"
-        - "$(inputs.resources.git-source.path)/$(inputs.params.pathToContext)/$(inputs.params.pathToYamlFile)"
+        - "/workspace/git-source/src/deploy.yaml"
 
