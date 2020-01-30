@@ -28,12 +28,18 @@ spec:
         - "-i"
         - "-e"
         - "s;IMAGE;de.icr.io/vcailly/builtapp:1.0;g"
-        - "/workspace/git-source/src/deploy.yaml"
+        - "/workspace/git-source/${inputs.params.pathToContext}/${inputs.params.pathToYamlFile}"
+      command: ["sed"]
+      args:
+        - "-i"
+        - "-e"
+        - "s;IMAGE;${inputs.params.imageUrl}:${inputs.params.imageTag};g"
+        - "/workspace/git-source/${inputs.params.pathToYamlFile}"
     - name: deploy-app
       image: lachlanevenson/k8s-kubectl
       command: ["kubectl"]
       args:
         - "apply"
         - "-f"
-        - "/workspace/git-source/src/deploy.yaml"
+        - "/workspace/git-source/${inputs.params.pathToContext}/${inputs.params.pathToYamlFile}"
 
