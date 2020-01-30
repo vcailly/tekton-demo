@@ -38,6 +38,8 @@ spec:
     runAfter:
       - build-image-from-source
     params:
+      - name: pathToContext
+        value: "${params.pathToContext}"
       - name: pathToYamlFile
         value: "$(params.pathToYamlFile)"
       - name: imageUrl
