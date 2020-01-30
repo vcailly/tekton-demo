@@ -17,8 +17,8 @@ spec:
       value: "src"
     - name: pathToYamlFile
       value: "deploy.yaml"
-    - name: "imageUrl"
-      value: "de.icr.io/vcailly/builtapp"
-    - name: "imageTag"
+     - name: imageUrl
+      value: de.icr.io/vcailly/builtapp
+    - name: imageTag
       value: "1.0"
   serviceAccount: service-account
