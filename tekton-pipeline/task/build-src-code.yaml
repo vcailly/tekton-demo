@@ -10,31 +10,29 @@ spec:
     params:
       - name: pathToContext
         description: The path to the build context, used by Kaniko - within the workspace
-        default: .
-      - name: pathToDockerFile
-        description: The path to the dockerfile to build (relative to the context)
+        default: src
+      - name: pathToDockerfile
+        description: The path to the dockerfile to build
         default: Dockerfile
       - name: imageUrl
-        description: Url of image repository
+        description: value should be like - us.icr.io/test_namespace/builtImageApp
       - name: imageTag
         description: Tag to apply to the built image
-        default: "latest"
-
   steps:
     - name: list-src
       image: alpine
       command:
-        - "echo"
+        - "ls"
       args:
-        - ${inputs.params.pathToContext}
+        - /workspace/git-source/src
     - name: build-and-push
       image: gcr.io/kaniko-project/executor
       command:
         - /kaniko/executor
       args:
-        - --dockerfile=${inputs.params.pathToDockerFile}
-        - --destination=${inputs.params.imageUrl}:${inputs.params.imageTag}
-        - --context=/workspace/git-source/${inputs.params.pathToContext}
+        - --dockerfile=Dockerfile
+        - --destination=de.icr.io/vcailly/builtapp:1.0
+        - --context=/workspace/git-source/src
       securityContext:
         runAsUser: 0
 
