@@ -13,8 +13,6 @@ spec:
     - name: pathToDockerfile
       description: The path to the dockerfile to build
       default: Dockerfile
-    - name: pathToContext
-      value: "src"
     - name: pathToYamlFile
       value: "deploy.yaml"
     - name: imageUrl
