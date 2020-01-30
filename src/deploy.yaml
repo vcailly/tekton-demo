@@ -29,6 +29,8 @@ spec:
       labels:
         app: app
     spec:
+      imagePullSecrets:
+      - name: ibm-cr-secret
       containers:
       - name: app
         image: IMAGE
