@@ -32,7 +32,7 @@ spec:
       args:
         - --dockerfile=${inputs.params.pathToDockerfile}
         - --destination=de.icr.io/vcailly/builtapp:1.0
-        - --context=--context=/workspace/git-source/${inputs.params.pathToContext}
+        - --context=/workspace/git-source/src
       securityContext:
         runAsUser: 0
 
