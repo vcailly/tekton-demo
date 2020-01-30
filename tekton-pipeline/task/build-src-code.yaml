@@ -22,9 +22,9 @@ spec:
     - name: list-src
       image: alpine
       command:
-        - "echo"
+        - "ls"
       args:
-        - /workspace/git-source/${inputs.params.pathToContext}
+        - /workspace/git-source/
     - name: build-and-push
       image: gcr.io/kaniko-project/executor
       command:
