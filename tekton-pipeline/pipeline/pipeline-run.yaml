@@ -18,5 +18,5 @@ spec:
     - name: imageUrl
       value: de.icr.io/vcailly/builtapp
     - name: imageTag
-      value: "1.0"
+      value: "1.1"
   serviceAccount: service-account
