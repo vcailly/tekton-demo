@@ -34,8 +34,7 @@ spec:
       args:
         - --dockerfile=${inputs.params.pathToDockerFile}
         - --destination=de.icr.io/vcailly/builtapp:1.0
-        - --destination=${inputs.params.imageUrl}:${inputs.params.imageTag}
-        - --context=/workspace/git-source/src
+        - --context=/workspace/git-source/${inputs.params.pathToContext}
       securityContext:
         runAsUser: 0
 
