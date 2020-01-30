@@ -15,10 +15,8 @@ spec:
       default: config.yaml
     - name: imageUrl
       description: Url of image repository
-      default: deploy_target
     - name: imageTag
       description: Tag to apply to the built image
-      default: latest
   tasks:
   - name: build-image-from-source
     taskRef:
@@ -27,9 +25,9 @@ spec:
       - name: pathToContext
         value: "${params.pathToContext}"
       - name: imageUrl
-        value: "$(params.imageUrl)"
+        value: "${params.imageUrl}"
       - name: imageTag
-        value: "$(params.imageTag)"
+        value: "${params.imageTag}"
     resources:
       inputs:
         - name: git-source
@@ -43,9 +41,9 @@ spec:
       - name: pathToYamlFile
         value: "$(params.pathToYamlFile)"
       - name: imageUrl
-        value: "$(params.imageUrl)"
+        value: "${params.imageUrl}"
       - name: imageTag
-        value: "$(params.imageTag)"
+        value: "${params.imageTag}"
     resources:
       inputs:
         - name: git-source

@@ -15,9 +15,10 @@ spec:
         description: The path to the dockerfile to build
         default: Dockerfile
       - name: imageUrl
-        description: value should be like - us.icr.io/test_namespace/builtImageApp
+        description: Url of image repository
       - name: imageTag
         description: Tag to apply to the built image
+        default: "latest"
   steps:
     - name: list-src
       image: alpine
@@ -31,7 +32,7 @@ spec:
         - /kaniko/executor
       args:
         - --dockerfile=${inputs.params.pathToDockerfile}
-        - --destination=de.icr.io/vcailly/builtapp:1.0
+        - --destination=${inputs.params.imageUrl}:${inputs.params.imageTag}
         - --context=/workspace/git-source/${inputs.params.pathToContext}
       securityContext:
         runAsUser: 0
