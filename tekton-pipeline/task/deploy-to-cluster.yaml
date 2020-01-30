@@ -28,7 +28,7 @@ spec:
         - "-i"
         - "-e"
         - "s;IMAGE;${inputs.params.imageUrl}:${inputs.params.imageTag};g"
-        - "/workspace/git-source/src/deploy.yaml"
+        - "/workspace/git-source/${inputs.params.pathToContext}/deploy.yaml"
     - name: deploy-app
       image: lachlanevenson/k8s-kubectl
       command: ["kubectl"]
