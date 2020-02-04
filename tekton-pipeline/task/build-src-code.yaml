@@ -31,7 +31,7 @@ spec:
       command:
         - /kaniko/executor
       args:
-        - --verbosity debug 
+        - --verbosity=debug 
         - --dockerfile=${inputs.params.pathToDockerfile}
         - --destination=${inputs.params.imageUrl}:${inputs.params.imageTag}
         - --context=/workspace/git-source/${inputs.params.pathToContext}
