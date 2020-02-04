@@ -27,7 +27,7 @@ spec:
       args:
         - /workspace/git-source/${inputs.params.pathToContext}
     - name: build-and-push
-      image: gcr.io/kaniko-project/executor
+      image: gcr.io/kaniko-project/executor:v0.16.0
       command:
         - /kaniko/executor
       args:
